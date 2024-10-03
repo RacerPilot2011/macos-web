@@ -1,0 +1,85 @@
+Old Modal code:
+const modal = document.getElementById('modal');
+const modalHeader = modal.querySelector('.modal-header');
+const closeBtn = modal.querySelector('.close');
+const modalTitle = modalHeader.querySelector('h2');
+const fullscreenBtn = modal.querySelector('.fullscreen')
+var target = document.getElementById("content");
+var newFrame = document.createElement("iframe");
+// Function to show modal
+function openModal(title) {
+  modalTitle.textContent = title; // Set the title dynamically
+  modal.style.display = 'block';
+  appTop.innerText = title;
+  about.innerText = "About " + title;
+}
+//Fullscreen modal
+fullscreenBtn.onclick = function () {
+  if (fullscreen == false){
+  modal.style.width = '100%';
+  modal.style.height = '100%';
+  fullscreen = true;
+  } else {
+  modal.style.width = '400px';
+  modal.style.height = '300px';
+  fullscreen = false;
+  }
+}
+// Close modal
+closeBtn.onclick = function () {
+  appTop.innerText = 'Finder';
+  modal.style.display = 'none';
+  about.innerText = "About Finder";
+  target.removeChild(newFrame);
+} 
+
+// Make the modal draggable
+modalHeader.onmousedown = function (event) {
+  let shiftX = event.clientX - modal.getBoundingClientRect().left;
+  let shiftY = event.clientY - modal.getBoundingClientRect().top;
+
+  function moveAt(pageX, pageY) {
+    modal.style.left = pageX - shiftX + 'px';
+    modal.style.top = pageY - shiftY + 'px';
+  }
+
+  function onMouseMove(event) {
+    moveAt(event.pageX, event.pageY);
+  }
+
+  document.addEventListener('mousemove', onMouseMove);
+
+  document.onmouseup = function () {
+    document.removeEventListener('mousemove', onMouseMove);
+    modalHeader.onmouseup = null;
+  };
+};
+
+// Make sure the modal doesn't get stuck on a drag
+modalHeader.ondragstart = function () {
+  return false;
+};
+
+// Add event listeners to dock icons to open the modal
+let dockIcons = document.querySelectorAll('.dock-item');
+dockIcons.forEach(icon => {
+  icon.addEventListener('click', function () {
+    // Check the class of the clicked icon
+    if (this.classList.contains('li-1')) {
+      openModal('Finder'); // Set the title to "Finder"
+    } else if (this.classList.contains('li-2')) {
+      openModal('Chrome'); // Set the title to "Safari"
+      
+      newFrame.setAttribute("src", "https://if-you-block-this-u-are-not-intelligent.it.com/");
+      target.appendChild(newFrame);
+      console.log("Added iframe");
+    } else if (this.classList.contains('li-3')) {
+      openModal('Photoshop');
+      content.innerText = "Coming Soon :)";
+    } else if (this.classList.contains('li-bin')) {
+      openModal('Trash');
+      content.innerText = "You";
+      content.style.height = "20px";
+    };
+  });
+});

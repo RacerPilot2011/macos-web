@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MacOS Desktop</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="icon/x-icon" href="/assets/images/appleLogo.png">
+</head>
+<body id="body" background="/assets/images/black.jpeg">
+    <div id="loading">
+        <img class="loading-logo" src="/assets/images/appleLogo.png">
+        <div class="loader"></div>
+        <p id="welcome" class="loading-text"></p>
+    </div>
+    <audio id="startUp">
+  <source src="startup.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+    <!-- Menu Bar -->
+    <div class="menu-bar" id="menubar">
+        <div class="left">
+            <!-- Apple Logo -->
+            <img src="/assets/images/appleLogo.png" class="apple-logo" alt="">
+            <!-- Menu Items -->
+            <div class="menus">
+                <div class="menu-item">
+                    <button id="appTop" class="menu-button finder"><b>Finder</b></button>
+                    <div class="submenu" id="about">
+                        <a href="#">About Finder</a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <button class="menu-button">File</button>
+                    <div class="submenu">
+                        <a href="#">New</a>
+                        <a href="#">Open</a>
+                        <a href="#" class="last">Save</a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <button class="menu-button">Edit</button>
+                    <div class="submenu">
+                        <a href="#">Undo</a>
+                        <a href="#">Redo</a>
+                        <a href="#" class="last">Copy</a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <button class="menu-button">View</button>
+                    <div class="submenu">
+                        <a href="#">Zoom In</a>
+                        <a href="#">Zoom Out</a>
+                        <a href="#" class="last">Full Screen</a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <button class="menu-button">Help</button>
+                    <div class="submenu">
+                        <a href="#">Search</a>
+                        <a href="https://forms.gle/p6d9UPsxVEXgztYF7">Support</a>
+                        <a href="#" class="last">About</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Time & Icons -->
+        <div class="right">
+            <!-- Clock -->
+            <div class="menu-time">
+                <span id="date"></span>
+                <span id="time"></span>
+            </div>
+        </div>
+    </div>
+    
+
+<script>
+var x = document.getElementById("startUp"); 
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 
+</script>
+    <!-- Dock -->
+    <div class="dock" id="dock">
+        <div class="dock-container">
+            <!-- Dock Items -->
+            <ul>
+                <li class="dock-item li-1">
+                    <div class="name">Finder</div>
+                    <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853981255cc36b3a37af_finder.png" alt="">
+                </li>
+                <li class="dock-item li-2">
+                    <div class="name">Chrome</div>
+                    <img class="ico" src="/assets/images/brand-google-chrome.1024x1024.png" alt="">
+                </li>
+                <li class="dock-item li-3">
+                    <div class="name">Photoshop</div>
+                    <img class="ico" src="https://codehs.com/uploads/955b60ed8971c88fdaae835afb05b15f" alt="">
+                </li>
+                <li class="dock-item li-4">
+                    <div class="name">Unblocked Sites</div>
+                    <img class="icocus" src="https://codehs.com/uploads/57425504364c221cba49bad302b397cb" alt="">
+                </li>
+                <li class="dock-item li-5">
+                    <div class="name">Calculator</div>
+                    <img class="ico" src="https://codehs.com/uploads/1f1cdda934f15016b202e13c1b97634c" alt="">
+                </li>
+                <li class="dock-item li-6">
+                    <div class="name">VSCode</div>
+                    <img class="ico" src="https://codehs.com/uploads/ac30eefe3afc44f3cdc01bb9a41a50d4" alt="">
+                </li>
+                <li class="dock-item li-7">
+                    <div class="name">Clock</div>
+                    <img class="ico" src="https://codehs.com/uploads/53427202cbdbf6da2d9d079d50647014" alt="">
+                </li>
+                <li class="dock-item li-8">
+                    <div class="name">Wallpapers</div>
+                    <img class="ico" src="https://codehs.com/uploads/33032aa6de8ff7a03f98cedf3aa805ed" alt="">
+                </li>
+                <li class="dock-item li-9">
+                    <div class="name">Calendar</div>
+                    <img class="ico" src="https://codehs.com/uploads/9b3d59514612c3c20cbeba0eb30c60b9" alt="">
+                </li>
+                <li class="dock-item li-10">
+                    <div class="name">FaceTime</div>
+                    <img class="ico" src="https://codehs.com/uploads/3c88f769c6f6a08a1a424184b9c70e02" alt="">
+                </li>
+                <li class="dock-item li-11">
+                    <div class="name">App Store</div>
+                    <img class="ico" src="https://codehs.com/uploads/0e7a162501a6f02e268610851beef3ad" alt="">
+                </li>
+                <li class="dock-item li-bin">
+                    <div class="name">Bin</div>
+                    <img class="icocus" src="https://codehs.com/uploads/55bf4ec5af4d007bc9b7f961c3bdef8e" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal Window -->
+    <div id="modal" class="modal">
+        <div class="modal-header">
+            <button class="close"></button><!--
+            --><button class="minimize"></button><!--
+            --><button class="fullscreen"></button>
+            <h2 id="appTitle">Test</h2>
+        </div>
+        <div class="modal-content" id="wrapper">
+             <iframe id="myIframe" src=""></iframe>
+        </div>
+    </div>
+
+    <script src="scripting.js"></script>
+
+
+</body>
+</html>
