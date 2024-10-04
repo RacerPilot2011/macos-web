@@ -262,7 +262,6 @@ menuItems.forEach(item => {
 
   // Show submenuaf on mouse enter
   button.addEventListener('mouseenter', () => {
-    document.body.style.overflow = 'visible';
     submenu.style.display = 'inline-grid'; // Show submenu
   });
 
