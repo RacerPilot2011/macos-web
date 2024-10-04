@@ -7,7 +7,7 @@ body {
   width: 100%;
   background-size: 100%;
   font-family: "San Francisco";
-  overflow: hidden;
+  overflow: visible;
 }
 /* Define a keyframe to change the background */
 @keyframes changeBackground {
