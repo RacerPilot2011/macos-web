@@ -264,7 +264,6 @@ menuItems.forEach(item => {
   button.addEventListener('mouseenter', () => {
     document.body.style.overflow = 'visible';
     submenu.style.display = 'inline-grid'; // Show submenu
-    $("body").css({"overflow":"visible"});
   });
 
   // Hide submenu on mouse leave
