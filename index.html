@@ -14,7 +14,7 @@
         <p id="welcome" class="loading-text"></p>
     </div>
     <audio id="startUp">
-  <source src="startup.mp3" type="audio/mpeg">
+  <source src="horse.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
     <!-- Menu Bar -->
@@ -80,7 +80,10 @@
 var x = document.getElementById("startUp"); 
 
 function playAudio() { 
-  x.play(); 
+  x.play().catch((error) => {
+    console.error('Error trying to play audio:', error);
+});
+; 
 } 
 
 function pauseAudio() { 
