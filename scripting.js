@@ -204,21 +204,21 @@ dockIcons.forEach(icon => {
     } else if (this.classList.contains('li-4')) { 
       openModal('Unblocked Stuff', 'https://docs.google.com/document/d/1u1PvZM6dA5gQ27lNvOM-ZWso5jKAi4x2Cizzd9QDjGY/edit?usp=sharing')
     } else if (this.classList.contains('li-5')) {
-      openModal('Calculator', ''); 
+      openModal('Calculator', '/calculator.html'); 
     } else if (this.classList.contains('li-6')) {
       openModal('VSCode', ''); 
     } else if (this.classList.contains('li-7')) {
-      openModal('Clock', ''); 
+      openModal('Clock', '/clock.html'); 
     } else if (this.classList.contains('li-8')) {
       openModal('Wallpapers', ''); 
     } else if (this.classList.contains('li-9')) {
-      openModal('Calender', ''); 
+      openModal('Calender', '/calender.html'); 
     } else if (this.classList.contains('li-10')) {
       openModal('FaceTime', ''); 
     } else if (this.classList.contains('li-11')) {
       openModal('App Store', ''); 
     } else if (this.classList.contains('li-bin')) {
-      openModal('Trash', "trash.html");
+      openModal('Trash', "/trash.html");
     };
   });
 });
